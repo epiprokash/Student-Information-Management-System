@@ -1,8 +1,0 @@
-*.pyc
-.env
-.DS_Store
-db.sqlite3
-media/
-venv/
-*/migrations/*
-!*/migrations/__init__.py
