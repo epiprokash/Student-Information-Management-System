@@ -1,5 +1,5 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <title>Student Management System</title>
@@ -28,6 +28,11 @@
               </a>
             </li>
           </ul>
+          {% if user.is_authenticated %}
+          <div>
+            <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+          </div>
+          {% endif %}
         </div>
       </div>
     </nav>

@@ -1,10 +1,12 @@
-{% extends 'students/base.html' %}
-
+{% extends 'base.html' %}
 {% block body %}
+<div class="container">
     <h1>System Login</h1>
-    <form method="POST">
+    <form class="form" method="POST">
          {% csrf_token %}
         {{form.as_p}}
-        <button>Login</button>
+        <button class="btn btn-info">Login</button>
+        <a class="btn btn-outline btn-info" href="{% url 'register' %}">Register</a>
     </form>
+</div>
 {% endblock %}
