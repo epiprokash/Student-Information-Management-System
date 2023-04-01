@@ -35,7 +35,7 @@ python -m venv venv
 
 From the **root** directory run:
 
-On macOS:
+On Linux/macOS:
 
 ```bash
 source venv/bin/activate

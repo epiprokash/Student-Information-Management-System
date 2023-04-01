@@ -1,0 +1,9 @@
+{% extends 'students/base.html' %}
+{% block body %}
+    <h1>Create New Account</h1>
+    <form method="POST">
+         {% csrf_token %}
+        {{form.as_p}}
+        <button>Register</button>
+    </form>
+{% endblock %}
