@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="container">
-    <h1>System Login</h1>
-    <form class="form" method="POST">
+<div class="container" >
+    <h1 style="display:flex; justify-content: center; padding-top: 100px;">System Login</h1><br/>
+    <form class="form" method="POST" style="display: flex;flex-direction: column; align-items: center; padding: auto;">
          {% csrf_token %}
         {{form.as_p}}
-        <button class="btn btn-info">Login</button>
+        <button class="btn btn-info" >Login</button><br/>
         <a class="btn btn-outline btn-info" href="{% url 'register' %}">Register</a>
     </form>
 </div>
