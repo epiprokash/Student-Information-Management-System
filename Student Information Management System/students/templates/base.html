@@ -23,11 +23,13 @@
                 <i class="fa-solid fa-list fa-lg"></i> All Students
               </a>
             </li>
+            {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'add' %}">
                 <i class="fa-solid fa-plus fa-lg"></i> Add Student
               </a>
             </li>
+            {% endif %}
           </ul>
           {% if user.is_authenticated %}
           <div>
