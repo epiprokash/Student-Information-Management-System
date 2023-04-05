@@ -1,6 +1,8 @@
-# Student Management System
+# Student Information Management System
 
-This is a student management system built using **Django 4**, **HTML 5**, **CSS 3**, and **Bootstrap 5**.
+This is a Student Information Management System built using **Django 4**, **HTML 5**, **CSS 3**, and **Bootstrap 5**.
+
+A Project by **Prokash Maitra**, **Meraj Al Maksud** and **Arafat Alam**
 
 ![plot](https://github.com/epiprokash/Important-Images/blob/main/Project%20Image.png)
 
