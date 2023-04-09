@@ -1,4 +1,10 @@
+# venv
 venv/
 env/
+.venv/
+.env/
 
+# editors
 .idea
+
+*.save
