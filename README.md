@@ -1,1 +1,1 @@
-Student Information Management System/README.md
+django_project/README.md
