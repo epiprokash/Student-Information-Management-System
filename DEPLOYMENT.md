@@ -1,15 +1,23 @@
 # Deploying django application with PostgreSQL on nginx to an Ubuntu server using gunicorn
 
-1. Install required softwares
+Before starting, we need an access to an Ubuntu server. We can create an Ubuntu server on AWS, Azure or GCP.
+
+1. First, login to the Ubuntu server and install required softwares
 
 ```bash
+ssh user@<server ip>
+or
+ssh -i /path/to/key.pem user@<server ip>
+
 sudo apt install python3 python3-venv python3-pip
 ```
 
-2. Copy project source to server
+2. Copy project source to server (execute this on your local machine)
 
 ```bash
 scp -r django_project user@hostname:/home/user
+or
+scp -i /path/to/key.pem -r django_project user@hostname:/home/user
 ```
 
 Edit `settings.py` and remove `insecure` from `SECRET_KEY`. Also, set DEBUG=False
@@ -151,12 +159,12 @@ The site now should be accessible at https://example.com
 9. Finally fix csrf validation issue by adding proper hostname to `ALLOWED_HOST` and `CSRF_TRUSTED_ORIGINS`
 
 ```python
-ALLOWED_HOSTS = ['example.com', '127.0.0.1', '<public ip>']
+ALLOWED_HOSTS = ['example.com', '127.0.0.1', '<server ip>']
 
 CSRF_TRUSTED_ORIGINS = [
     'http://.*',
     'https://example.com',
-    'https://<public ip>',
+    'https://<server ip>',
     'http://127.0.0.1',
 ]
 ```
