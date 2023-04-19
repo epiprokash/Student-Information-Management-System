@@ -1,4 +1,21 @@
+# venv
 venv/
 env/
+.venv/
+.env/
 
+# editors
 .idea
+*.pyc
+*.save
+
+.DS_Store
+db.sqlite3
+media/
+
+# migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# secret
+*/secret.py
