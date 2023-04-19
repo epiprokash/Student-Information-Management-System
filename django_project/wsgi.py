@@ -8,11 +8,11 @@ https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/
 """
 
 import os
+from .secret import DJANGO_ENV
 
 from django.core.wsgi import get_wsgi_application
 
-# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
-if os.environ.get('DJANGO_ENV') == 'production':
+if DJANGO_ENV == 'prod':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings_prod')
 else:
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')

@@ -20,3 +20,22 @@ STATICFILES_DIRS = [
     BASE_DIR / 'students/static',
     '/home/meraj/staticfiles',
 ]
+
+# logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'class': 'logging.handlers.WatchedFileHandler',
+            'filename': '/home/meraj/django.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}

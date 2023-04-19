@@ -1,4 +1,4 @@
-# Deploying django application on nginx to an Ubuntu server using gunicorn
+# Deploying django application with PostgreSQL on nginx to an Ubuntu server using gunicorn
 
 Before starting, we need an access to an Ubuntu server. We can create an Ubuntu server on AWS, Azure or GCP.
 
@@ -32,13 +32,37 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+3. Setup PostgreSQL server
+
+```bash
+sudo apt install postgresql
+sudo pg_ctlcluster <version> main start
+psql -U postgres -d postgres
+```
+
+Create user and database for the application to use
+```sql
+CREATE USER admin WITH PASSWORD 'admin';
+CREATE DATABASE database;
+GRANT ALL ON DATABASE database TO admin;
+```
+
+Sign in using the user to check
+```bash
+psql -U admin -d database -W
+```
+
 4. Give credentials to `settings.py`
 
 ```python
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dbname',
+        'USER': 'user',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 ```
