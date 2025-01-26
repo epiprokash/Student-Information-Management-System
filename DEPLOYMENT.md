@@ -20,10 +20,16 @@ or
 scp -i /path/to/key.pem -r django_project user@hostname:/home/user
 ```
 
+> _NOTE:_ on Windows machines, `ssh` and `scp` operations may need to be done with
+> third party clients such as [PuTTy](https://www.putty.org/)
+
 Edit `settings.py` and remove `insecure` from `SECRET_KEY`. Also, set DEBUG=False
 ```bash
 DEBUG=False
 ```
+
+> _NOTE:_ no matter what keep your `SECRET_KEY` secret if you want to keep your app secure.
+> You may want to use `SECRET_KEY` different from development on your production app.
 
 Create virtual environment and install dependencies
 ```bash
@@ -153,6 +159,8 @@ Now users will be able to post form without any errors.
 ```bash
 sudo nano /etc/systemd/system/myproject.service
 ```
+
+Copy paste the following:
 
 ```
 [Unit]
